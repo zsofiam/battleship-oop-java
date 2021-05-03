@@ -1,4 +1,4 @@
-# Battleship OOP
+# battleship OOP
 
 ## Story
 
@@ -9,7 +9,7 @@
 > <div style="text-align:right">John Carmack,<br>lead programmer of Doom (and more)</div>
 
 In this project your job is to implement the
-[Battleship game](https://en.wikipedia.org/wiki/Battleship_%28game%29) for two players. Use newly learned OOP practices.
+[battleship game](https://en.wikipedia.org/wiki/Battleship_%28game%29) for two players. Use newly learned OOP practices.
 
 ## What are you going to learn?
 
@@ -38,10 +38,10 @@ You will practice the fundamentals of Object-Oriented Programming such as:
     - Classes use public methods to communicate with the outside code, and private methods for eliminating code duplication and better readability.
     - Polymorphism is used wherever possible, in order to make the code as universal as possible and avoid code duplication.
 
-2. Implement the `Battleship` class that will be used as the highest level class.
-    - Class `Battleship` has fields `Display` and `Input` that are used throughout the program.
-    - Class `Battleship` has a loop in which program runs.
-    - Class `Battleship` shows main menu and allows the user to start new game, display highscores and exit.
+2. Implement the `battleship` class that will be used as the highest level class.
+    - Class `battleship` has fields `Display` and `Input` that are used throughout the program.
+    - Class `battleship` has a loop in which program runs.
+    - Class `battleship` shows main menu and allows the user to start new game, display highscores and exit.
 
 3. Implement class `Display` and its methods.
     - Class `Display` prints the game menu.
@@ -85,7 +85,7 @@ You will practice the fundamentals of Object-Oriented Programming such as:
     - Class `Ship` has field of `List<Square>` - all squares the ship consists of.
 
 11. Implement enum `ShipType` and it's methods.
-    - Enum `ShipType` represents ship types - Carrier, Cruiser, Battleship, Submarine and Destroyer.
+    - Enum `ShipType` represents ship types - Carrier, Cruiser, battleship, Submarine and Destroyer.
     - Each `ShipType` has a unique length.
 
 12. Implement class `Square` and its methods.
@@ -116,4 +116,4 @@ None
 - <i class="far fa-exclamation"></i> [Abstraction in Java](https://www.w3schools.com/java/java_abstract.asp)
 - <i class="far fa-exclamation"></i> [Polymorphism in Java](https://www.w3schools.com/java/java_polymorphism.asp)
 - <i class="far fa-exclamation"></i> [Getters and Setters in Java](https://www.w3schools.com/java/java_encapsulation.asp)
-- [Tips on Battleship strategy](https://www.wikihow.com/Win-at-Battleship)
+- [Tips on battleship strategy](https://www.wikihow.com/Win-at-Battleship)
