@@ -1,5 +1,7 @@
 package battleship;
 
+import java.util.List;
+
 public class Player {
 	private List<Ship> ships;
 	public void handleShot() {
