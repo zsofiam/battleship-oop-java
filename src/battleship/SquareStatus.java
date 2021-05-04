@@ -2,7 +2,7 @@ package battleship;
 
 public enum SquareStatus {
 	// (empty, ship, hit, missed) unicode character
-	EMPTY("."),
+	EMPTY(" . "),
 	SHIP("S"),
 	HIT("H"),
 	MISSED("X");
