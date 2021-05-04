@@ -17,4 +17,12 @@ public class Board {
 	public boolean isPlacementOk() {
 		return true;
 	}
+
+	public int getRows() {
+		return ocean.length;
+	}
+
+	public int getColumns() {
+		return ocean[0].length;
+	}
 }
