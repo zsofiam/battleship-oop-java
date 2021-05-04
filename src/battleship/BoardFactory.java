@@ -8,8 +8,13 @@ public class BoardFactory {
 	private Random random;
 	private Input input;
 
-	public void randomPlacement() {
+	public BoardFactory(Board board) {
+		this.board = board;
+		this.input = new Input();
+		random = new Random();
+	}
 
+	public void randomPlacement() {
 		int boardSize = getBoardSize();
 		if (boardSize > 5) {
 			placeOnBoard(ShipType.CARRIER);
@@ -70,7 +75,6 @@ public class BoardFactory {
 	}
 
 	public void manualPlacement() {
-
 		int boardSize = getBoardSize();
 		if (boardSize > 5) {
 			placeOnBoardManual(ShipType.CARRIER);
@@ -89,15 +93,21 @@ public class BoardFactory {
 		boolean isPlacementOk = false;
 		int row = 0;
 		int col = 0;
-		String[] directions = new String[]{"h", "v"};
 		String direction = null;
-		int[] startPosition = new int[2];
+		int[] startPosition;
 		int length = shipType.length;
 		while (!isPlacementOk){
 			startPosition = input.getStartCoordinates(shipType);
 			direction = input.getShipDirection();
 			isPlacementOk = board.isPlacementOk(startPosition, direction, length);
+			if(!isPlacementOk){
+				System.out.println("Cannot place ship there. Please try again!");
+			}
 		}
 		placeOnBoard(shipType.length, new int[]{row,col}, direction);
+	}
+
+	public static void main(String[] args) {
+
 	}
 }

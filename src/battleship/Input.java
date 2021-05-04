@@ -10,7 +10,7 @@ public class Input {
         int row = 0;
         int col = 0;
         while (!validInput){
-            System.out.println(String.format("Please enter %s (length: %d) coordinates:%n", shipType.name(),shipType.length));
+            System.out.print(String.format("Please enter %s (length: %d) coordinates:%n", shipType.name(),shipType.length));
             String coordinates = scanner.nextLine();
             try {
                 row = Integer.parseInt(coordinates.substring(0,1));
@@ -27,7 +27,22 @@ public class Input {
     }
 
     public String getShipDirection() {
-        return null;
+        boolean validInput = false;
+        String direction = null;
+        while (!validInput){
+            System.out.println("Please choose direction: h (horizontal) or v (vertical):");
+            direction = scanner.nextLine();
+            try {
+                if (direction.equalsIgnoreCase("h") || direction.equalsIgnoreCase("v")){
+                    validInput = true;
+                }
+            }
+            catch (Exception e){
+                System.out.println("Incorrect input!");
+                continue;
+            }
+        }
+        return direction;
     }
     // gather every input
 	// validate every input
