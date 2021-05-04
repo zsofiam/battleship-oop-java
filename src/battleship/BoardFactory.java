@@ -5,22 +5,21 @@ import java.util.Random;
 public class BoardFactory {
 
 	private Board board;
-	private ShipType shipType;
 	private Random random;
 
 	public void randomPlacement() {
 
 		int boardSize = getBoardSize();
 		if (boardSize > 5) {
-			placeOnBoard(shipType.CARRIER);
+			placeOnBoard(ShipType.CARRIER);
 		} if (boardSize > 15) {
-			placeOnBoard(shipType.CRUISER);
+			placeOnBoard(ShipType.CRUISER);
 		} if (boardSize > 25) {
-			placeOnBoard(shipType.BATTLESHIP);
+			placeOnBoard(ShipType.BATTLESHIP);
 		} if (boardSize > 35) {
-			placeOnBoard(shipType.SUBMARINE);
+			placeOnBoard(ShipType.SUBMARINE);
 		} if (boardSize > 45) {
-			placeOnBoard(shipType.DESTROYER);
+			placeOnBoard(ShipType.DESTROYER);
 		}
 	}
 
@@ -39,10 +38,22 @@ public class BoardFactory {
 			startPosition = new int[]{row,col};
 			isPlacementOk = board.isPlacementOk(startPosition, direction, length);
 		}
-		placeOnBoard(shipType, new int[]{row,col}, direction);
+		placeOnBoard(shipType.length, new int[]{row,col}, direction);
 	}
-	private void placeOnBoard(ShipType shipType, int[]startPosition, String direction){
 
+	private void placeOnBoard(int length, int[]startPosition, String direction){
+		int row = startPosition[0];
+		int col = startPosition[1];
+		if(direction.equals("h")){
+			for(int i = 0; i < length; i++){
+				board.getOcean()[row][col+i] = new Square(row, (col+i), SquareStatus.SHIP);
+			}
+		}
+		else{
+			for(int i = 0; i < length; i++){
+				board.getOcean()[row+i][col] = new Square((row+i), col, SquareStatus.SHIP);
+			}
+		}
 	}
 
 	private int getBoardSize() {

@@ -25,4 +25,8 @@ public class Board {
 	public int getColumns() {
 		return ocean[0].length;
 	}
+
+	public Square[][] getOcean() {
+		return ocean;
+	}
 }
