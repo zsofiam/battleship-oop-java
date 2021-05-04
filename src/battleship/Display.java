@@ -21,7 +21,7 @@ public class Display {
 			for (int j = 0; j < col; j++) {
 				System.out.print(ocean[i][j].getStatus().getCharacter());
 			}
-			System.out.println('\n');
+			System.out.println("");
 		}
 		System.out.println("------------");
 	}
@@ -38,7 +38,7 @@ public class Display {
 					System.out.print(SquareStatus.EMPTY.getCharacter());
 				}
 			}
-			System.out.println('\n');
+			System.out.println("");
 		}
 		System.out.println("------------");
 	}
