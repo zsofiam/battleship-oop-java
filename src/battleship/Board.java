@@ -32,8 +32,10 @@ public class Board {
 					if ((j == -1 && i != 0) || (j == shipLength && i != 0)) {
 						continue;
 					}
-					if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
-						return false;
+					if (row + i >= 0 && col + j >= 0) {
+						if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
+							return false;
+						}
 					}
 				}
 			}
@@ -48,8 +50,10 @@ public class Board {
 					if ((i == -1 && j != 0) || (i == shipLength && j != 0)) {
 						continue;
 					}
-					if (ocean[row + i][col + j].getStatus() == SquareStatus.EMPTY) {
-						return false;
+					if (row + i >= 0 && col + j >= 0) {
+						if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
+							return false;
+						}
 					}
 				}
 			}
