@@ -20,4 +20,21 @@ public class Ship {
 	public void addSquare(Square square) {
 		squares.add(square);
 	}
+
+	//Get the whole list
+	public List<Square> getSquares() {
+		return squares;
+	}
+
+	//Get a specific square by coords
+	public Square getSquareByCoord(int x, int y) {
+		for (int i = 0; i < squares.size(); i++) {
+			if (squares.get(i).getX() == x && squares.get(i).getY() == y) {
+				return squares.get(i);
+			}
+		}
+
+		//This square has no ship
+		return new Square(x, y, SquareStatus.EMPTY);
+	}
 }
