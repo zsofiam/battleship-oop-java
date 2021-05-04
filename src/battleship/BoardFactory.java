@@ -28,7 +28,7 @@ public class BoardFactory {
 		int row = 0;
 		int col = 0;
 		String[] directions = new String[]{"h", "v"};
-		String direction;
+		String direction = "v";
 		int[] startPosition;
 		int length = shipType.length;
 		while (!isPlacementOk){
