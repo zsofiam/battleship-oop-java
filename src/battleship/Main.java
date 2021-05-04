@@ -5,6 +5,5 @@ public class Main {
 		int row = 10;
 		int col = 10;
 		Board board = new Board(row, col);
-
 	}
 }

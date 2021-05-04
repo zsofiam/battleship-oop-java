@@ -19,11 +19,42 @@ public class Board {
 		}
 	}
 	public boolean isPlacementOk(int[] startPosition, String direction, int shipLength) {
+		int row = startPosition[0];
+		int col = startPosition[1];
 		if (direction.equalsIgnoreCase("h")) {
-			return startPosition[1] + shipLength - 1 <= colNum;
+			// check if outside of board
+			if (col + shipLength - 1 > colNum) {
+				return false;
+			}
+			// check for occupied places in surrounding 3 rows and shipLength+2 columns
+			for (int i = -1; i < 2; i ++) {
+				for (int j = -1; j <= shipLength; j++) {
+					if ((j == -1 && i != 0) || (j == shipLength && i != 0)) {
+						continue;
+					}
+					if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
+						return false;
+					}
+				}
+			}
 		// else vertical
 		} else {
-			return startPosition[0] + shipLength - 1 <= rowNum;
+			if (row + shipLength - 1 > rowNum) {
+				return false;
+			}
+			// check for occupied places in surrounding shipLength+2 rows and 3 columns
+			for (int i = -1; i <= shipLength; i++) {
+				for (int j = -1; j < 2; j++) {
+					if ((i == -1 && j != 0) || (i == shipLength && j != 0)) {
+						continue;
+					}
+					if (ocean[row + i][col + j].getStatus() == SquareStatus.EMPTY) {
+						return false;
+					}
+				}
+			}
 		}
+
+		return true;
 	}
 }
