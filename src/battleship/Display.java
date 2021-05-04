@@ -17,30 +17,56 @@ public class Display {
 	}
 
 	public void printBoardDuringPlacingShips(Square[][] ocean) {
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++) {
-				System.out.print(ocean[i][j].getStatus().getCharacter());
+		for (int i = 0; i <= row; i++) {
+			for (int j = 0; j <= col; j++) {
+				if (i == 0 && j == 0) {
+					System.out.print("   ");
+				} else if (i == 0) {
+					System.out.print(" " + letters[j - 1] + " ");
+				} else if (j == 0){
+					if (i > 9) {
+						System.out.print(i + "  ");
+					} else {
+						System.out.print(i + "   ");
+					}
+				} else {
+					System.out.print(ocean[i - 1][j - 1].getStatus().getCharacter());
+				}
+
 			}
 			System.out.println("");
 		}
-		System.out.println("------------");
+		System.out.println("");
 	}
 
 	public void printBoardDuringShooting(Square[][] ocean) {
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++) {
-				// you cannot see the ships just the hits or missed hits and ocean
-				if (ocean[i][j].getStatus() == SquareStatus.EMPTY ||
-					ocean[i][j].getStatus() == SquareStatus.HIT ||
-					ocean[i][j].getStatus() == SquareStatus.MISSED) {
-					System.out.print(ocean[i][j].getStatus().getCharacter());
-				} else if (ocean[i][j].getStatus() == SquareStatus.SHIP){
-					System.out.print(SquareStatus.EMPTY.getCharacter());
+		for (int i = 0; i <= row; i++) {
+			for (int j = 0; j <= col; j++) {
+				if (i == 0 && j == 0) {
+					System.out.print("   ");
+				} else if (i == 0) {
+					System.out.print(" " + letters[j - 1] + " ");
+				} else if (j == 0){
+					if (i > 9) {
+						System.out.print(i + "  ");
+					} else {
+						System.out.print(i + "   ");
+					}
+				} else {
+					// you cannot see the ships just the hits or missed hits and ocean
+					if (ocean[i - 1][j - 1].getStatus() == SquareStatus.EMPTY ||
+							ocean[i - 1][j - 1].getStatus() == SquareStatus.HIT ||
+							ocean[i - 1][j - 1].getStatus() == SquareStatus.MISSED) {
+						System.out.print(ocean[i - 1][j - 1].getStatus().getCharacter());
+					} else if (ocean[i - 1][j - 1].getStatus() == SquareStatus.SHIP){
+						System.out.print(SquareStatus.EMPTY.getCharacter());
+					}
 				}
+
 			}
 			System.out.println("");
 		}
-		System.out.println("------------");
+		System.out.println("");
 	}
 
 	public void printGameOver() {

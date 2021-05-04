@@ -18,8 +18,8 @@ public class Battleship {
 	}
 
 	public void play() {
-		display.printBoardDuringPlacingShips(board.getOcean());
-		display.printBoardDuringShooting(board.getOcean());
+//		display.printBoardDuringPlacingShips(board.getOcean());
+//		display.printBoardDuringShooting(board.getOcean());
 //		while (true) {
 //			//
 //		}

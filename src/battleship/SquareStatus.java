@@ -2,10 +2,10 @@ package battleship;
 
 public enum SquareStatus {
 	// (empty, ship, hit, missed) unicode character
-	EMPTY(" 🌊"),
-	SHIP(" ⛵"),
-	HIT(" 🎯"),
-	MISSED(" 🚩");
+	EMPTY("🌊 "),
+	SHIP("📌 "),
+	HIT("💥 "),
+	MISSED("🚩 ");
 
 	String status;
 
