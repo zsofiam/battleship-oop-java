@@ -107,10 +107,4 @@ public class BoardFactory {
 		placeOnBoard(shipType.length, new int[]{row,col}, direction);
 	}
 
-	public static void main(String[] args) {
-		Board board = new Board(10,10);
-		BoardFactory boardFactory = new BoardFactory(board);
-		boardFactory.manualPlacement();
-	}
-
 }
