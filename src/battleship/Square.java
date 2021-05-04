@@ -11,9 +11,7 @@ public class Square {
 		this.status = status;
 	}
 
-	public String getCharacter() {
-		return null; // empty, ship, hit, missed - graphical representation
-	}
+
 	// do we need getter and setter?
 	// difference getStataus vs getCharacter?
 	public SquareStatus getStatus() {
@@ -22,5 +20,13 @@ public class Square {
 
 	public void setStatus(SquareStatus status) {
 		this.status = status;
+	}
+
+	public int getX() {
+		return X;
+	}
+
+	public int getY() {
+		return Y;
 	}
 }

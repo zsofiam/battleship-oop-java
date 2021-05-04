@@ -13,4 +13,8 @@ public enum SquareStatus {
 		this.status = status;
 	}
 
+	public String getCharacter() {
+		return status; // empty, ship, hit, missed - graphical representation
+	}
+
 }
