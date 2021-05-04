@@ -28,9 +28,9 @@ public class Ship {
 
 	//Get a specific square by coords
 	public Square getSquareByCoord(int x, int y) {
-		for (int i = 0; i < squares.size(); i++) {
-			if (squares.get(i).getX() == x && squares.get(i).getY() == y) {
-				return squares.get(i);
+		for (Square square : squares) {
+			if (square.getX() == x && square.getY() == y) {
+				return square;
 			}
 		}
 
