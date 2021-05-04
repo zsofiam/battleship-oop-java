@@ -107,7 +107,4 @@ public class BoardFactory {
 		placeOnBoard(shipType.length, new int[]{row,col}, direction);
 	}
 
-	public static void main(String[] args) {
-
-	}
 }
