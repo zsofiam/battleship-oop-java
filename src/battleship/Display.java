@@ -13,8 +13,7 @@ public class Display {
 	}
 
 	public void printMenu() {
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
+		clearTerminal();
 
 		System.out.println("______         _    _    _          _____  _      _");
 		System.out.println("| ___ \\       | |  | |  | |        /  ___|| |    (_)");
@@ -88,8 +87,7 @@ public class Display {
 	}
 
 	public void printGameOver(int winner) {
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
+		clearTerminal();
 
 		System.out.println("  __ _   __ _  _ __ ___    ___      ___  __   __  ___  _ __    ");
 		System.out.println(" / _` | / _` || '_ ` _ \\  / _ \\    / _ \\ \\ \\ / / / _ \\| '__|");
@@ -117,6 +115,11 @@ public class Display {
 			letters[index++] = String.valueOf(c);
 		}
 
+	}
+
+	public void clearTerminal() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
 	}
 
 }
