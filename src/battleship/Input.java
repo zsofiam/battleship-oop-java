@@ -56,6 +56,43 @@ public class Input {
         }
         return direction;
     }
+
+    public int getMenuInput() {
+        boolean validInput = false;
+        int nextState = -1;
+        System.out.println("\n                   Waiting for your input..");
+
+        while (!validInput){
+            nextState = scanner.nextInt();
+            if (nextState == 0 || nextState < 3) {
+                validInput = true;
+            }
+            else {
+                System.out.println("\n      Please choose from the menu options!");
+                continue;
+            }
+        }
+        return nextState;
+    }
+
+    public int getGameMode() {
+        boolean validInput = false;
+        String mode = null;
+        System.out.println("Please choose your desired game mode: pvp (Player vs. Player) or pva (Player vs. AI):");
+        while (!validInput){
+            mode = scanner.nextLine();
+            if (mode.equalsIgnoreCase("pvp") || mode.equalsIgnoreCase("pva")){
+                validInput = true;
+            }
+            else {
+                System.out.println("Please choose from the options (pvp or pva)!");
+                continue;
+            }
+        }
+
+        //pvp = 1; pva = 2
+        return (mode == "pvp" ? 1 : 2);
+    }
     // gather every input
 	// validate every input
 

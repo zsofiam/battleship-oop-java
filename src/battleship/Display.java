@@ -13,7 +13,22 @@ public class Display {
 	}
 
 	public void printMenu() {
+		System.out.println("______         _    _    _          _____  _      _");
+		System.out.println("| ___ \\       | |  | |  | |        /  ___|| |    (_)");
+		System.out.println("| |_/ /  __ _ | |_ | |_ | |  ___   \\ `--. | |__   _  _ __");
+		System.out.println("| ___ \\ / _` || __|| __|| | / _ \\   `--. \\| '_ \\ | || '_ \\");
+		System.out.println("| |_/ /| (_| || |_ | |_ | ||  __/  /\\__/ /| | | || || |_) |");
+		System.out.println("\\____/  \\__,_| \\__| \\__||_| \\___|  \\____/ |_| |_||_|| .__/");
+		System.out.println("                                                    | |");
+		System.out.println("                                                    |_|");
 
+		System.out.println("_____________________________________________________________");
+		System.out.println("|                         WELCOME!                          |");
+		System.out.println("|                                                           |");
+		System.out.println("|                       1 - Play game                       |");
+		System.out.println("|                       2 - High Score                      |");
+		System.out.println("|                         0 - Exit                          |");
+		System.out.println("_____________________________________________________________");
 	}
 
 	public void printBoardDuringPlacingShips(Square[][] ocean) {
