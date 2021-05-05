@@ -13,7 +13,24 @@ public class Display {
 	}
 
 	public void printMenu() {
+		clearTerminal();
 
+		System.out.println("______         _    _    _          _____  _      _");
+		System.out.println("| ___ \\       | |  | |  | |        /  ___|| |    (_)");
+		System.out.println("| |_/ /  __ _ | |_ | |_ | |  ___   \\ `--. | |__   _  _ __");
+		System.out.println("| ___ \\ / _` || __|| __|| | / _ \\   `--. \\| '_ \\ | || '_ \\");
+		System.out.println("| |_/ /| (_| || |_ | |_ | ||  __/  /\\__/ /| | | || || |_) |");
+		System.out.println("\\____/  \\__,_| \\__| \\__||_| \\___|  \\____/ |_| |_||_|| .__/");
+		System.out.println("                                                    | |");
+		System.out.println("                                                    |_|");
+
+		System.out.println("_____________________________________________________________");
+		System.out.println("|                         WELCOME!                          |");
+		System.out.println("|                                                           |");
+		System.out.println("|                       1 - Play game                       |");
+		System.out.println("|                       2 - High Score                      |");
+		System.out.println("|                         0 - Exit                          |");
+		System.out.println("_____________________________________________________________");
 	}
 
 	public void printBoardDuringPlacingShips(Square[][] ocean) {
@@ -69,8 +86,24 @@ public class Display {
 		System.out.println("");
 	}
 
-	public void printGameOver() {
+	public void printGameOver(int winner) {
+		clearTerminal();
 
+		System.out.println("  __ _   __ _  _ __ ___    ___      ___  __   __  ___  _ __    ");
+		System.out.println(" / _` | / _` || '_ ` _ \\  / _ \\    / _ \\ \\ \\ / / / _ \\| '__|");
+		System.out.println("| (_| || (_| || | | | | ||  __/   | (_) | \\ V / |  __/| |    _");
+		System.out.println(" \\__, | \\__,_||_| |_| |_| \\___|    \\___/   \\_/   \\___||_|   (_)");
+		System.out.println("  __/ |                                                        ");
+		System.out.println("\\____/");
+
+		System.out.println("_____________________________________________________________");
+		System.out.println("|                     CONGRATULATIONS!                      |");
+		System.out.println("|                                                           |");
+		System.out.println("|                      PLAYER #"+String.valueOf(winner)+" WON!                       |");
+		System.out.println("|                                                           |");
+		System.out.println("|                                                           |");
+		System.out.println("|            Press enter to return to the menu...           |");
+		System.out.println("_____________________________________________________________");
 	}
 
 	public void generateLetters() {
@@ -82,6 +115,11 @@ public class Display {
 			letters[index++] = String.valueOf(c);
 		}
 
+	}
+
+	public void clearTerminal() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
 	}
 
 }
