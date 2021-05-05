@@ -13,6 +13,9 @@ public class Display {
 	}
 
 	public void printMenu() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+
 		System.out.println("______         _    _    _          _____  _      _");
 		System.out.println("| ___ \\       | |  | |  | |        /  ___|| |    (_)");
 		System.out.println("| |_/ /  __ _ | |_ | |_ | |  ___   \\ `--. | |__   _  _ __");
@@ -85,6 +88,9 @@ public class Display {
 	}
 
 	public void printGameOver(int winner) {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+
 		System.out.println("  __ _   __ _  _ __ ___    ___      ___  __   __  ___  _ __    ");
 		System.out.println(" / _` | / _` || '_ ` _ \\  / _ \\    / _ \\ \\ \\ / / / _ \\| '__|");
 		System.out.println("| (_| || (_| || | | | | ||  __/   | (_) | \\ V / |  __/| |    _");
