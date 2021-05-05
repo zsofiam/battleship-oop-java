@@ -21,7 +21,7 @@ public class Board {
 	public boolean isPlacementOk(int[] startPosition, String direction, int shipLength) {
 		int row = startPosition[0];
 		int col = startPosition[1];
-		if(row <0 || row >= rowNum || col < 0 || col >= colNum){
+		if (!isFieldOnBoard(row, col)){
 			return false;
 		}
 		if (direction.equalsIgnoreCase("h")) {
@@ -62,6 +62,13 @@ public class Board {
 			}
 		}
 
+		return true;
+	}
+
+	private boolean isFieldOnBoard(int row, int col) {
+		if(row < 0 || row >= rowNum || col < 0 || col >= colNum){
+			return false;
+		}
 		return true;
 	}
 
