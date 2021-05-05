@@ -92,4 +92,7 @@ public class Board {
 	public Square[][] getOcean() {
 		return ocean;
 	}
+	public void placeShot(int[]squarePosition){
+		//TO DO - mark shot on board
+	}
 }
