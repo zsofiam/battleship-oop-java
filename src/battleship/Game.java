@@ -1,7 +1,10 @@
 package battleship;
 
 public class Game {
-	Board board;
+	Board board1;
+	Board board2;
+	Player player1;
+	Player player2;
 	int row;
 	int col;
 
@@ -11,16 +14,25 @@ public class Game {
 		this.col = col;
 	}
 
-	public void playerVsPlayer() {
+	public void playerVsPlayer(Input input, Display display) {
 		// play rounds, make moves
 		// check game end condition
-		board = new Board(row, col);
+		board1 = new Board(row, col); // player1
+		board2 = new Board(row, col); // player2
+		player1 = new Player("Peter");
+		player2 = new Player("Katie");
+		display.printTurn("Peter");
+
+		display.printTurn("Katie");
 	}
 
 	public void playerVsAI() {
 		// play rounds, make moves
 		// check game end condition
-		board = new Board(row, col);
+		board1 = new Board(row, col); // player
+		board2 = new Board(row, col); // AI
+		player1 = new Player("Peter");
+		player2 = new Player("Computer");
 	}
 
 	public boolean isEnd() {

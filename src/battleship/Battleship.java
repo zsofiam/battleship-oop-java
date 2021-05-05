@@ -15,17 +15,16 @@ public class Battleship {
 		// need row and col for display
 		this.display = new Display(row, col);
 		this.input = new Input();
-		showMenu();
 	}
 
 	public void play(int gameMode) {
-		// input for row and col
+		// write here input for row and col to change size
 
 		this.game = new Game(row, col);
 
 		if (gameMode == 1) {
 			System.out.println(gameMode);
-			game.playerVsPlayer();
+			game.playerVsPlayer(input, display);
 		} else {
 			System.out.println(gameMode);
 			game.playerVsAI();

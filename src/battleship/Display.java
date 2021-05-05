@@ -122,6 +122,10 @@ public class Display {
 		System.out.flush();
 	}
 
+	public void printTurn(String name) {
+		System.out.println("* " + name + "'s turn!");
+	}
+
 	public void sayGoodbye() {
 		System.out.println(" * Goodbye! *");
 	}

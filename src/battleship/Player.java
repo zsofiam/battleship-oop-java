@@ -4,6 +4,15 @@ import java.util.List;
 
 public class Player {
 	private List<Ship> ships;
+	private String name;
+
+	public Player(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
 
 	public void handleShot(Square[][] enemyBoard, int[] coordinates) {
 		int row = coordinates[0];
