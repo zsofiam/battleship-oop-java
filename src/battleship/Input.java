@@ -94,7 +94,7 @@ public class Input {
         return (mode == "pvp" ? 1 : 2);
     }
 
-    public void waitForKeypress() {
+    public void waitForEnter() {
         boolean validInput = false;
         scanner.nextLine();
     }

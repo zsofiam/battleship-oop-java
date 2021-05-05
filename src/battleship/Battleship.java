@@ -26,7 +26,7 @@ public class Battleship {
 //			//
 //		}
 		display.printGameOver(1);
-		input.waitForKeypress();
+		input.waitForEnter();
 	}
 
 	public void showMenu() {
