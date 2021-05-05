@@ -15,7 +15,14 @@ public class Player {
 		}
 	}
 
-	public boolean isAlive() {
-		return true;
+	public boolean isAlive(Square[][] board) {
+		for (Square[] row: board) {
+			for (Square square: row) {
+				if (square.getStatus() == SquareStatus.SHIP) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
