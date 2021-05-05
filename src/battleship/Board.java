@@ -18,7 +18,6 @@ public class Board {
 				ocean[i][j] = new Square(i, j, SquareStatus.EMPTY);
 			}
 		}
-		ocean[4][0] = new Square(4, 0, SquareStatus.SHIP);
 	}
 	public boolean isPlacementOk(int[] startPosition, String direction, int shipLength) {
 		int row = startPosition[0];
