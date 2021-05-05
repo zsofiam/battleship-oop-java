@@ -93,6 +93,11 @@ public class Input {
         //pvp = 1; pva = 2
         return (mode == "pvp" ? 1 : 2);
     }
+
+    public void waitForKeypress() {
+        boolean validInput = false;
+        scanner.nextLine();
+    }
     // gather every input
 	// validate every input
 

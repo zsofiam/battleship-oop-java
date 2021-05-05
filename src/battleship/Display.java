@@ -98,7 +98,7 @@ public class Display {
 		System.out.println("|                      PLAYER #"+String.valueOf(winner)+" WON!                       |");
 		System.out.println("|                                                           |");
 		System.out.println("|                                                           |");
-		System.out.println("|         Press any button to return to the menu...         |");
+		System.out.println("|            Press enter to return to the menu...           |");
 		System.out.println("_____________________________________________________________");
 	}
 
