@@ -18,23 +18,20 @@ public class Battleship {
 	}
 
 	public void play(int gameMode) {
+		String winner;
 		// write here input for row and col to change size
 
 		this.game = new Game(row, col);
-
+		display.clearScreen();
 		if (gameMode == 1) {
 			System.out.println(gameMode);
-			game.playerVsPlayer(input, display);
+			winner = game.playerVsPlayer(input, display);
 		} else {
 			System.out.println(gameMode);
-			game.playerVsAI();
+			winner = game.playerVsAI(input, display);
 		}
-//		display.printBoardDuringPlacingShips(board.getOcean());
-//		display.printBoardDuringShooting(board.getOcean());
-//		while (true) {
-//			//
-//		}
-		display.printGameOver(1);
+
+		display.printGameOver(winner);
 		input.waitForEnter();
 	}
 
