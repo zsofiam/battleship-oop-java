@@ -10,12 +10,12 @@ public class Input {
         this.scanner = new Scanner(System.in);
     }
 
-    public int[] getStartCoordinates(ShipType shipType) {
+    public int[] getValidCoordinates() {
         boolean validInput = false;
         int coordinateX = 0;
         int coordinateY = 0;
         String coordinates = null;
-        System.out.print(String.format("Please enter %s (length: %d) coordinates:%n", shipType.name(),shipType.length));
+
         while (!validInput){
             coordinates = scanner.nextLine();
             try {
@@ -56,6 +56,15 @@ public class Input {
         }
         return direction;
     }
+
+//    for testing purposes, will be deleted later:
+
+    /*public static void main(String[] args) {
+        Board board = new Board(10,10);
+        BoardFactory boardFactory = new BoardFactory(board);
+        boardFactory.getAndPlaceShotOnBoard();
+    }*/
+
     // gather every input
 	// validate every input
 
