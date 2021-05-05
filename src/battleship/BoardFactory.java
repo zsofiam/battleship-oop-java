@@ -4,31 +4,37 @@ import java.util.Random;
 
 public class BoardFactory {
 
-	private Board board;
-	private Random random;
+	private final Board board;
+	private final Random random;
+	private final Input input;
+
+	public BoardFactory(Board board) {
+		this.board = board;
+		this.input = new Input();
+		random = new Random();
+	}
 
 	public void randomPlacement() {
-
 		int boardSize = getBoardSize();
 		if (boardSize > 5) {
-			placeOnBoard(ShipType.CARRIER);
+			checkAndPlaceOnBoardRandom(ShipType.CARRIER);
 		} if (boardSize > 15) {
-			placeOnBoard(ShipType.CRUISER);
+			checkAndPlaceOnBoardRandom(ShipType.CRUISER);
 		} if (boardSize > 25) {
-			placeOnBoard(ShipType.BATTLESHIP);
+			checkAndPlaceOnBoardRandom(ShipType.BATTLESHIP);
 		} if (boardSize > 35) {
-			placeOnBoard(ShipType.SUBMARINE);
+			checkAndPlaceOnBoardRandom(ShipType.SUBMARINE);
 		} if (boardSize > 45) {
-			placeOnBoard(ShipType.DESTROYER);
+			checkAndPlaceOnBoardRandom(ShipType.DESTROYER);
 		}
 	}
 
-	private void placeOnBoard(ShipType shipType) {
+	private void checkAndPlaceOnBoardRandom(ShipType shipType) {
 		boolean isPlacementOk = false;
 		int row = 0;
 		int col = 0;
 		String[] directions = new String[]{"h", "v"};
-		String direction = "v";
+		String direction = null;
 		int[] startPosition;
 		int length = shipType.length;
 		while (!isPlacementOk){
@@ -69,6 +75,36 @@ public class BoardFactory {
 	}
 
 	public void manualPlacement() {
-
+		int boardSize = getBoardSize();
+		if (boardSize > 5) {
+			checkAndPlaceOnBoardManual(ShipType.CARRIER);
+		} if (boardSize > 15) {
+			checkAndPlaceOnBoardManual(ShipType.CRUISER);
+		} if (boardSize > 25) {
+			checkAndPlaceOnBoardManual(ShipType.BATTLESHIP);
+		} if (boardSize > 35) {
+			checkAndPlaceOnBoardManual(ShipType.SUBMARINE);
+		} if (boardSize > 45) {
+			checkAndPlaceOnBoardManual(ShipType.DESTROYER);
+		}
 	}
+
+	private void checkAndPlaceOnBoardManual(ShipType shipType) {
+		boolean isPlacementOk = false;
+		int row = 0;
+		int col = 0;
+		String direction = null;
+		int[] startPosition;
+		int length = shipType.length;
+		while (!isPlacementOk){
+			startPosition = input.getStartCoordinates(shipType);
+			direction = input.getShipDirection();
+			isPlacementOk = board.isPlacementOk(startPosition, direction, length);
+			if(!isPlacementOk){
+				System.out.println("Cannot place ship there. Please try again!");
+			}
+		}
+		placeOnBoard(shipType.length, new int[]{row,col}, direction);
+	}
+
 }

@@ -21,6 +21,9 @@ public class Board {
 	public boolean isPlacementOk(int[] startPosition, String direction, int shipLength) {
 		int row = startPosition[0];
 		int col = startPosition[1];
+		if(row <0 || row >= rowNum || col < 0 || col >= colNum){
+			return false;
+		}
 		if (direction.equalsIgnoreCase("h")) {
 			// check if outside of board
 			if (col + shipLength - 1 > colNum) {
