@@ -122,4 +122,8 @@ public class Display {
 		System.out.flush();
 	}
 
+	public void sayGoodbye() {
+		System.out.println(" * Goodbye! *");
+	}
+
 }

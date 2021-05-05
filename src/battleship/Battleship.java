@@ -3,23 +3,33 @@ package battleship;
 public class Battleship {
 	private Display display;
 	private Input input;
-	private int gameMode = 1;
+	private Game game;
+	private int gameMode;
 	// row and col can be set from input
 	int row = 10;
 	int col = 10;
-	Board board;
+
 
 
 	public Battleship() {
-		board = new Board(row, col);
 		// need row and col for display
 		this.display = new Display(row, col);
 		this.input = new Input();
-
 		showMenu();
 	}
 
-	public void play() {
+	public void play(int gameMode) {
+		// input for row and col
+
+		this.game = new Game(row, col);
+
+		if (gameMode == 1) {
+			System.out.println(gameMode);
+			game.playerVsPlayer();
+		} else {
+			System.out.println(gameMode);
+			game.playerVsAI();
+		}
 //		display.printBoardDuringPlacingShips(board.getOcean());
 //		display.printBoardDuringShooting(board.getOcean());
 //		while (true) {
@@ -37,7 +47,7 @@ public class Battleship {
 		switch (nextState) {
 			case 1:
 				gameMode = input.getGameMode();
-				play();
+				play(gameMode);
 				break;
 			case 2:
 				showHighScores();
@@ -45,6 +55,7 @@ public class Battleship {
 
 			case 0:
 			default:
+				display.sayGoodbye();
 				System.exit(0);
 				break;
 		}

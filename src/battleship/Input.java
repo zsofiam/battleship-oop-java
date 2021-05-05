@@ -91,8 +91,8 @@ public class Input {
             }
         }
 
-        //pvp = 1; pva = 2
-        return (mode == "pvp" ? 1 : 2);
+        //pvp = 1; pva = 2 - it returned always 2 when used the "==" instead of "equals"
+        return (mode.equalsIgnoreCase("pvp") ? 1 : 2);
     }
 
     public void waitForEnter() {
