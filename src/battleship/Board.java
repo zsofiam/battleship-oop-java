@@ -4,6 +4,7 @@ public class Board {
 	private Square[][] ocean;
 	private int rowNum;
 	private int colNum;
+	private SquareStatus status;
 
 	public Board(int row, int col) {
 		ocean = new Square[row][col];
@@ -21,7 +22,7 @@ public class Board {
 	public boolean isPlacementOk(int[] startPosition, String direction, int shipLength) {
 		int row = startPosition[0];
 		int col = startPosition[1];
-		if (!isFieldOnBoard(row, col)){
+		if (!isSquareOnBoard(row, col)){
 			return false;
 		}
 		if (direction.equalsIgnoreCase("h")) {
@@ -65,11 +66,19 @@ public class Board {
 		return true;
 	}
 
-	private boolean isFieldOnBoard(int row, int col) {
-		if(row < 0 || row >= rowNum || col < 0 || col >= colNum){
-			return false;
-		}
-		return true;
+	public boolean isShotOk(int[] squarePosition){
+		int row = squarePosition[0];
+		int col = squarePosition[1];
+		return isSquareOnBoard(row, col) && isSquareEmptyOrShip(row, col);
+	}
+
+	private boolean isSquareEmptyOrShip(int row, int col) {
+		status = ocean[row][col].getStatus();
+		return status.equals(SquareStatus.EMPTY) || status.equals(SquareStatus.SHIP);
+	}
+
+	private boolean isSquareOnBoard(int row, int col) {
+		return row >= 0 && row < rowNum && col >= 0 && col < colNum;
 	}
 
 	public int getRows() {
