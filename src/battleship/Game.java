@@ -30,11 +30,13 @@ public class Game {
 		display.printBoardDuringPlacingShips(board1.getOcean());
 		display.printTurn("Peter");
 		// TODO need to print board after every ship placement !!
+		// TODO review placement correction and displaying issue !!
 		factory1.manualPlacement();
 		display.clearScreen();
 		display.printBoardDuringPlacingShips(board2.getOcean());
 		display.printTurn("Katie");
 		// TODO need to print board after every ship placement !!
+		// TODO review placement correction and displaying issue !!
 		factory2.manualPlacement();
 
 		while (!isEnd) {
@@ -42,6 +44,7 @@ public class Game {
 			display.printBoardDuringShooting(board2.getOcean());
 			display.printTurn("Peter");
 			// shoot enemy
+			// TODO review shooting correction and displaying issue !!
 			factory2.getAndPlaceShotOnBoard();
 			display.clearScreen();
 			// print enemy board after shooting
@@ -56,6 +59,7 @@ public class Game {
 			display.printBoardDuringShooting(board1.getOcean());
 			display.printTurn("Katie");
 			// shoot enemy
+			// TODO review placement correction and displaying issue !!
 			factory1.getAndPlaceShotOnBoard();
 			display.clearScreen();
 			// print enemy board after shooting
