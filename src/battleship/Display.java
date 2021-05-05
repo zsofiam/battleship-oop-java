@@ -84,8 +84,22 @@ public class Display {
 		System.out.println("");
 	}
 
-	public void printGameOver() {
+	public void printGameOver(int winner) {
+		System.out.println("  __ _   __ _  _ __ ___    ___      ___  __   __  ___  _ __    ");
+		System.out.println(" / _` | / _` || '_ ` _ \\  / _ \\    / _ \\ \\ \\ / / / _ \\| '__|");
+		System.out.println("| (_| || (_| || | | | | ||  __/   | (_) | \\ V / |  __/| |    _");
+		System.out.println(" \\__, | \\__,_||_| |_| |_| \\___|    \\___/   \\_/   \\___||_|   (_)");
+		System.out.println("  __/ |                                                        ");
+		System.out.println("\\____/");
 
+		System.out.println("_____________________________________________________________");
+		System.out.println("|                     CONGRATULATIONS!                      |");
+		System.out.println("|                                                           |");
+		System.out.println("|                      PLAYER #"+String.valueOf(winner)+" WON!                       |");
+		System.out.println("|                                                           |");
+		System.out.println("|                                                           |");
+		System.out.println("|         Press any button to return to the menu...         |");
+		System.out.println("_____________________________________________________________");
 	}
 
 	public void generateLetters() {

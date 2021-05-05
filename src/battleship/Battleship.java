@@ -25,6 +25,7 @@ public class Battleship {
 //		while (true) {
 //			//
 //		}
+		display.printGameOver(1);
 	}
 
 	public void showMenu() {
