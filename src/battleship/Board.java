@@ -27,13 +27,16 @@ public class Board {
 		}
 		if (direction.equalsIgnoreCase("h")) {
 			// check if outside of board
-			if (col + shipLength - 1 > colNum) {
+			if (col + shipLength - 1 >= colNum) {
 				return false;
 			}
 			// check for occupied places in surrounding 3 rows and shipLength+2 columns
 			for (int i = -1; i < 2; i ++) {
 				for (int j = -1; j <= shipLength; j++) {
-					if ((j == -1 && i != 0) || (j == shipLength && i != 0)) {
+					// skips the diagonal places and the out of board places around the ship
+					if ((j == -1 && i != 0) || (j == shipLength && i != 0)
+						|| row + i < 0 || row + i >= rowNum
+						|| col + j < 0 || col + j >= colNum) {
 						continue;
 					}
 					if (row + i >= 0 && col + j >= 0) {
@@ -45,13 +48,16 @@ public class Board {
 			}
 		// else vertical
 		} else {
-			if (row + shipLength - 1 > rowNum) {
+			if (row + shipLength - 1 >= rowNum) {
 				return false;
 			}
 			// check for occupied places in surrounding shipLength+2 rows and 3 columns
 			for (int i = -1; i <= shipLength; i++) {
 				for (int j = -1; j < 2; j++) {
-					if ((i == -1 && j != 0) || (i == shipLength && j != 0)) {
+					// skips the diagonal places and the out of board places around the ship
+					if ((i == -1 && j != 0) || (i == shipLength && j != 0)
+						|| row + i < 0 || row + i >= rowNum
+						|| col + j < 0 || col + j >= colNum) {
 						continue;
 					}
 					if (row + i >= 0 && col + j >= 0) {
