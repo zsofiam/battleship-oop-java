@@ -7,11 +7,13 @@ public class BoardFactory {
     private final Board board;
     private final Random random;
     private final Input input;
+    private final Display display;
 
     public BoardFactory(Board board) {
         this.board = board;
         this.input = new Input();
         random = new Random();
+        display = new Display(board.getRows(), board.getColumns());
     }
 
     public void randomPlacement() {
