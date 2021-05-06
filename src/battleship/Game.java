@@ -15,7 +15,7 @@ public class Game {
 		this.col = col;
 	}
 
-	public String playerVsPlayer(Input input, Display display) {
+	public String playerVsPlayer(Input input, Display display) throws InterruptedException {
 		String shotMessage = "";
 		display.clearScreen();
 		// play rounds, make moves
@@ -40,7 +40,7 @@ public class Game {
 		display.printTurn("Katie");
 		// TODO need to print board after every ship placement !!
 		// TODO review placement correction and displaying issue !!
-		factory2.manualPlacement();
+		factory2.randomPlacement();
 
 		while (!isEnd) {
 			// print enemy board before shooting

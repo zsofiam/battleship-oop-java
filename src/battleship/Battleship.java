@@ -17,7 +17,7 @@ public class Battleship {
 		this.input = new Input();
 	}
 
-	public void play(int gameMode) {
+	public void play(int gameMode) throws InterruptedException {
 		String winner;
 		// write here input for row and col to change size
 
@@ -35,7 +35,7 @@ public class Battleship {
 		input.waitForEnter();
 	}
 
-	public void showMenu() {
+	public void showMenu() throws InterruptedException {
 		display.printMenu();
 
 		int nextState = input.getMenuInput();
