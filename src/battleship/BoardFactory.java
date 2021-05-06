@@ -21,28 +21,18 @@ public class BoardFactory {
         Square[][] ocean = board.getOcean();
         if (boardSize > 5) {
             checkAndPlaceOnBoardRandom(ShipType.CARRIER);
-            display.printBoardDuringPlacingShips(ocean);
-            Thread.sleep(1000);
         }
         if (boardSize > 15) {
             checkAndPlaceOnBoardRandom(ShipType.CRUISER);
-            display.printBoardDuringPlacingShips(ocean);
-            Thread.sleep(1000);
         }
         if (boardSize > 25) {
             checkAndPlaceOnBoardRandom(ShipType.BATTLESHIP);
-            display.printBoardDuringPlacingShips(ocean);
-            Thread.sleep(1000);
         }
         if (boardSize > 35) {
             checkAndPlaceOnBoardRandom(ShipType.SUBMARINE);
-            display.printBoardDuringPlacingShips(ocean);
-            Thread.sleep(1000);
         }
         if (boardSize > 45) {
             checkAndPlaceOnBoardRandom(ShipType.DESTROYER);
-            display.printBoardDuringPlacingShips(ocean);
-            Thread.sleep(1000);
         }
     }
 

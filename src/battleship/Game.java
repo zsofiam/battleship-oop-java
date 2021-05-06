@@ -40,7 +40,7 @@ public class Game {
 		display.printTurn("Katie");
 		// TODO need to print board after every ship placement !!
 		// TODO review placement correction and displaying issue !!
-		factory2.randomPlacement();
+		factory2.manualPlacement();
 
 		while (!isEnd) {
 			// print enemy board before shooting
