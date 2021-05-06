@@ -31,15 +31,11 @@ public class Game {
 		display.printBoardOwner("Peter");
 		display.printBoardDuringPlacingShips(board1.getOcean());
 		display.printTurn("Peter");
-		// TODO need to print board after every ship placement !!
-		// TODO review placement correction and displaying issue !!
 		factory1.manualPlacement();
 		display.clearScreen();
 		display.printBoardOwner("Katie");
 		display.printBoardDuringPlacingShips(board2.getOcean());
 		display.printTurn("Katie");
-		// TODO need to print board after every ship placement !!
-		// TODO review placement correction and displaying issue !!
 		factory2.manualPlacement();
 
 		while (!isEnd) {
