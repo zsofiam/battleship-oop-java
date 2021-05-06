@@ -72,6 +72,7 @@ public class Game {
 	}
 
 	public String playerVsAI(Input input, Display display) {
+		String shotMessage = "";
 		display.clearScreen();
 		// play rounds, make moves
 		// check game end condition
@@ -82,10 +83,44 @@ public class Game {
 		player2 = new Player("Computer");
 		BoardFactory factory1 = new BoardFactory(board1);
 		BoardFactory factory2 = new BoardFactory(board2);
+		display.clearScreen();
+		display.printBoardOwner("Peter");
+		display.printBoardDuringPlacingShips(board1.getOcean());
 		display.printTurn("Peter");
+		factory1.manualPlacement();
 
 		display.clearScreen();
+		display.printBoardOwner("Computer");
+		display.printBoardDuringPlacingShips(board2.getOcean());
 		display.printTurn("Computer");
+		// random placement
+
+		while (!isEnd) {
+			// print enemy board before shooting
+			display.printBoardOwner("Computer");
+			display.printBoardDuringShooting(board2.getOcean());
+			display.printTurn("Peter");
+			// shoot computer
+			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean());
+			display.clearScreen();
+			display.printBoardOwner("Computer");
+			display.printBoardDuringShooting(board2.getOcean());
+			display.printHitMessage(shotMessage, "Computer");
+			isEnd = !player2.isAlive(board2.getOcean());
+			if (isEnd) {
+				break;
+			}
+			display.clearScreen();
+			display.printTurn("Computer");
+			// wait for computer to move
+			input.waitForEnter();
+			// TODO computer shoot player
+			display.printBoardOwner("Peter");
+			display.printBoardDuringShooting(board1.getOcean());
+			// TODO write AI shotMessage
+			input.waitForEnter();
+			isEnd = !player1.isAlive(board1.getOcean());
+		}
 
 		return !player1.isAlive(board1.getOcean()) ? "Computer" : "Peter";
 	}
