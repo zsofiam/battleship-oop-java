@@ -1,6 +1,5 @@
 package battleship;
 
-import java.io.IOException;
 
 public class Display {
 	int col;

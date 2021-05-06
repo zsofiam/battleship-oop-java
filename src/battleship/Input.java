@@ -100,16 +100,4 @@ public class Input {
         scanner.nextLine();
     }
 
-//    for testing purposes, will be deleted later:
-
-    /*public static void main(String[] args) {
-        Board board = new Board(10,10);
-        BoardFactory boardFactory = new BoardFactory(board);
-        boardFactory.getAndPlaceShotOnBoard();
-    }*/
-
-
-    // gather every input
-	// validate every input
-
 }

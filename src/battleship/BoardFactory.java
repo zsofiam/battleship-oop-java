@@ -7,11 +7,13 @@ public class BoardFactory {
     private final Board board;
     private final Random random;
     private final Input input;
+    private final Display display;
 
     public BoardFactory(Board board) {
         this.board = board;
         this.input = new Input();
         random = new Random();
+        display = new Display(board.getRows(), board.getColumns());
     }
 
     public void randomPlacement() {
@@ -79,20 +81,26 @@ public class BoardFactory {
 
     public void manualPlacement() {
         int boardSize = getBoardSize();
+        Square[][] ocean = board.getOcean();
         if (boardSize > 5) {
             checkAndPlaceOnBoardManual(ShipType.CARRIER);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 15) {
             checkAndPlaceOnBoardManual(ShipType.CRUISER);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 25) {
             checkAndPlaceOnBoardManual(ShipType.BATTLESHIP);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 35) {
             checkAndPlaceOnBoardManual(ShipType.SUBMARINE);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 45) {
             checkAndPlaceOnBoardManual(ShipType.DESTROYER);
+            display.printBoardDuringPlacingShips(ocean);
         }
     }
 
