@@ -100,4 +100,9 @@ public class Input {
         scanner.nextLine();
     }
 
+    public String askName(Display display, int number) {
+        display.askNameMessage(number);
+        return scanner.nextLine();
+    }
+
 }

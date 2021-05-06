@@ -79,27 +79,32 @@ public class BoardFactory {
         return board.getRows();
     }
 
-    public void manualPlacement() {
+    public void manualPlacement(Player player, boolean isJustMe) {
         int boardSize = getBoardSize();
         Square[][] ocean = board.getOcean();
         if (boardSize > 5) {
             checkAndPlaceOnBoardManual(ShipType.CARRIER);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 15) {
             checkAndPlaceOnBoardManual(ShipType.CRUISER);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 25) {
             checkAndPlaceOnBoardManual(ShipType.BATTLESHIP);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 35) {
             checkAndPlaceOnBoardManual(ShipType.SUBMARINE);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 45) {
             checkAndPlaceOnBoardManual(ShipType.DESTROYER);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
     }
@@ -121,15 +126,25 @@ public class BoardFactory {
         placeOnBoard(shipType.length, startPosition, direction);
     }
 
-    public String getAndPlaceShotOnBoard(Square[][] enemyBoard) {
+    public String getAndPlaceShotOnBoard(Square[][] enemyBoard, ComputerPlayer computer) {
         boolean validShot = false;
         int[] squarePosition = new int[2];
-        System.out.println("Provide shooting coordinates!");
+        if (computer == null) {
+            System.out.println("Provide shooting coordinates!");
+        }
         while (!validShot) {
-            squarePosition = input.getValidCoordinates();
+            if (computer == null) {
+                squarePosition = input.getValidCoordinates();
+            } else {
+                int row = random.nextInt(getBoardRows());
+                int col = random.nextInt(getBoardColumns());
+                squarePosition = new int[]{row, col};
+            }
             validShot = board.isShotOk(squarePosition);
             if (!validShot) {
-                System.out.println("Not valid shot. Please try again!");
+                if (computer == null) {
+                    System.out.println("Not valid shot. Please try again!");
+                }
             }
         }
         return board.placeShot(squarePosition, enemyBoard);

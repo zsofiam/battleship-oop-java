@@ -134,23 +134,49 @@ public class Display {
 		}
 	}
 
-	public void printTurn(String name) {
-		System.out.println("🧭 " + name + "'s turn!");
+	public void printTurn(String name, boolean isJustMe) {
+		if (isJustMe) {
+			System.out.println("🧭 It's your turn " + name + "!");
+		} else {
+			System.out.println("🧭 " + name + "'s turn!");
+		}
+
+	}
+	public void printComputerPlacingTurn(String name) {
+		System.out.println("🧭 " + name + "'s turn to place ships!");
 	}
 
-	public void printHitMessage(String message, String name) {
-		if (message.equals("hit")) {
-			System.out.println("💥 You hit " + name + "'s ship!");
+	public void printHitMessage(String message, String name, ComputerPlayer computer) {
+		// if the player shot
+		if (computer == null) {
+			if (message.equals("hit")) {
+				System.out.println("💥 You hit " + name + "'s ship!");
+			} else {
+				System.out.println("🚩 You missed! :( ");
+			}
+		// else the computer shot, name = computer name
 		} else {
-			System.out.println("🚩 You missed! :( ");
+			if (message.equals("hit")) {
+				System.out.println("💥 " + name + " hit your ship! :(");
+			} else {
+				System.out.println("🚩 " + name + " missed the shot! :)");
+			}
 		}
+
 	}
-	public void printBoardOwner(String name) {
-		System.out.println("\n" + name + "'s board:");
+	public void printBoardOwner(String name, boolean isJustMe) {
+		if (isJustMe) {
+			System.out.println("\n Your board:");
+		} else {
+			System.out.println("\n" + name + "'s board:");
+		}
 	}
 
 	public void sayGoodbye() {
 		System.out.println(" * Goodbye! *");
+	}
+	public void askNameMessage(int number) {
+		System.out.println("Player" + number + "'s name: ");
 	}
 
 }
