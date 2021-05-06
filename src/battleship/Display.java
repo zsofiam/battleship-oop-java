@@ -15,7 +15,7 @@ public class Display {
 	}
 
 	public void printMenu() {
-		clearTerminal();
+		clearScreen();
 
 		System.out.println("______         _    _    _          _____  _      _");
 		System.out.println("| ___ \\       | |  | |  | |        /  ___|| |    (_)");
@@ -89,7 +89,7 @@ public class Display {
 	}
 
 	public void printGameOver(String winner) {
-		clearTerminal();
+		clearScreen();
 
 		System.out.println("  __ _   __ _  _ __ ___    ___      ___  __   __  ___  _ __    ");
 		System.out.println(" / _` | / _` || '_ ` _ \\  / _ \\    / _ \\ \\ \\ / / / _ \\| '__|");
@@ -119,18 +119,26 @@ public class Display {
 
 	}
 
-	public void clearTerminal() {
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
+	public void clearScreen() {
+		try
+		{
+			final String os = System.getProperty("os.name");
+
+			if (os.contains("Windows")) new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+			else System.out.print("\033[H\033[2J");
+
+			System.out.flush();
+		}
+		catch (final Exception e)
+		{
+			System.out.println("FAILED to clear the screen: " + e);
+		}
 	}
 
 	public void printTurn(String name) {
 		System.out.println("🧭 " + name + "'s turn!");
 	}
 
-	public void clearScreen() {
-
-	}
 	public void printHitMessage(String message, String name) {
 		if (message.equals("hit")) {
 			System.out.println("💥 You hit " + name + "'s ship!");
