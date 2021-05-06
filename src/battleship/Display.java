@@ -131,6 +131,13 @@ public class Display {
 	public void clearScreen() {
 
 	}
+	public void printHitMessage(String message, String name) {
+		if (message.equals("hit")) {
+			System.out.println("💥 You hit " + name + "'s ship!");
+		} else {
+			System.out.println("🚩 You missed! :( ");
+		}
+	}
 
 	public void sayGoodbye() {
 		System.out.println(" * Goodbye! *");

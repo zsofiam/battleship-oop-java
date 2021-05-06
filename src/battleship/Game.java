@@ -16,6 +16,7 @@ public class Game {
 	}
 
 	public String playerVsPlayer(Input input, Display display) {
+		String shotMessage = "";
 		display.clearScreen();
 		// play rounds, make moves
 		// check game end condition
@@ -44,10 +45,10 @@ public class Game {
 			display.printBoardDuringShooting(board2.getOcean());
 			display.printTurn("Peter");
 			// shoot enemy
-			factory2.getAndPlaceShotOnBoard(board2.getOcean());
+			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean());
 			display.clearScreen();
-			// TODO print some message: hit, missed os etc
 			display.printBoardDuringShooting(board2.getOcean());
+			display.printHitMessage(shotMessage, "Katie");
 			isEnd = !player2.isAlive(board2.getOcean());
 			if (isEnd) {
 				break;
@@ -58,10 +59,10 @@ public class Game {
 			display.printBoardDuringShooting(board1.getOcean());
 			display.printTurn("Katie");
 			// shoot enemy
-			factory1.getAndPlaceShotOnBoard(board1.getOcean());
+			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean());
 			display.clearScreen();
-			// TODO print some message: hit, missed os etc
 			display.printBoardDuringShooting(board1.getOcean());
+			display.printHitMessage(shotMessage, "Peter");
 			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());
 		}
