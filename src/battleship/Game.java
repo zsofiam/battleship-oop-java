@@ -44,10 +44,9 @@ public class Game {
 			display.printBoardDuringShooting(board2.getOcean());
 			display.printTurn("Peter");
 			// shoot enemy
-			// TODO review shooting correction and displaying issue !!
 			factory2.getAndPlaceShotOnBoard(board2.getOcean());
 			display.clearScreen();
-			// print enemy board after shooting
+			// TODO print some message: hit, missed os etc
 			display.printBoardDuringShooting(board2.getOcean());
 			isEnd = !player2.isAlive(board2.getOcean());
 			if (isEnd) {
@@ -59,11 +58,11 @@ public class Game {
 			display.printBoardDuringShooting(board1.getOcean());
 			display.printTurn("Katie");
 			// shoot enemy
-			// TODO review placement correction and displaying issue !!
 			factory1.getAndPlaceShotOnBoard(board1.getOcean());
 			display.clearScreen();
-			// print enemy board after shooting
+			// TODO print some message: hit, missed os etc
 			display.printBoardDuringShooting(board1.getOcean());
+			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());
 		}
 		return !player1.isAlive(board1.getOcean()) ? "Katie" : "Peter";

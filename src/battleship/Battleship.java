@@ -6,8 +6,8 @@ public class Battleship {
 	private Game game;
 	private int gameMode;
 	// row and col can be set from input
-	int row = 10;
-	int col = 10;
+	int row = 5;
+	int col = 5;
 
 
 
