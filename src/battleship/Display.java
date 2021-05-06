@@ -39,19 +39,19 @@ public class Display {
 		for (int i = 0; i <= row; i++) {
 			for (int j = 0; j <= col; j++) {
 				if (i == 0 && j == 0) {
-					System.out.print("   ");
+					System.out.print("    ");
 				} else if (i == 0) {
-					System.out.print(" " + letters[j - 1] + " ");
-				} else if (j == 0){
-					if (i > 9) {
-						System.out.print(i + "  ");
+					if (j > 9) {
+						System.out.print(j + " ");
 					} else {
-						System.out.print(i + "   ");
+						System.out.print(j + "  ");
 					}
+
+				} else if (j == 0){
+					System.out.print(letters[i - 1] + "   ");
 				} else {
 					System.out.print(ocean[i - 1][j - 1].getStatus().getCharacter());
 				}
-
 			}
 			System.out.println("");
 		}
@@ -62,15 +62,15 @@ public class Display {
 		for (int i = 0; i <= row; i++) {
 			for (int j = 0; j <= col; j++) {
 				if (i == 0 && j == 0) {
-					System.out.print("   ");
+					System.out.print("    ");
 				} else if (i == 0) {
-					System.out.print(" " + letters[j - 1] + " ");
-				} else if (j == 0){
-					if (i > 9) {
-						System.out.print(i + "  ");
+					if (j > 9) {
+						System.out.print(j + " ");
 					} else {
-						System.out.print(i + "   ");
+						System.out.print(j + "  ");
 					}
+				} else if (j == 0){
+					System.out.print(letters[i - 1] + "   ");
 				} else {
 					// you cannot see the ships just the hits or missed hits and ocean
 					if (ocean[i - 1][j - 1].getStatus() == SquareStatus.EMPTY ||
