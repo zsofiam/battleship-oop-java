@@ -39,10 +39,8 @@ public class Board {
 						|| col + j < 0 || col + j >= colNum) {
 						continue;
 					}
-					if (row + i >= 0 && col + j >= 0) {
-						if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
-							return false;
-						}
+					if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
+						return false;
 					}
 				}
 			}
@@ -60,10 +58,8 @@ public class Board {
 						|| col + j < 0 || col + j >= colNum) {
 						continue;
 					}
-					if (row + i >= 0 && col + j >= 0) {
-						if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
-							return false;
-						}
+					if (ocean[row + i][col + j].getStatus() == SquareStatus.SHIP) {
+						return false;
 					}
 				}
 			}

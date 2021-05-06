@@ -1,5 +1,7 @@
 package battleship;
 
+import java.io.IOException;
+
 public class Display {
 	int col;
 	int row;
@@ -86,7 +88,7 @@ public class Display {
 		System.out.println("");
 	}
 
-	public void printGameOver(int winner) {
+	public void printGameOver(String winner) {
 		clearTerminal();
 
 		System.out.println("  __ _   __ _  _ __ ___    ___      ___  __   __  ___  _ __    ");
@@ -99,7 +101,7 @@ public class Display {
 		System.out.println("_____________________________________________________________");
 		System.out.println("|                     CONGRATULATIONS!                      |");
 		System.out.println("|                                                           |");
-		System.out.println("|                      PLAYER #"+String.valueOf(winner)+" WON!                       |");
+		System.out.println("|                      "+winner+" WON!                       |");
 		System.out.println("|                                                           |");
 		System.out.println("|                                                           |");
 		System.out.println("|            Press enter to return to the menu...           |");
@@ -120,6 +122,18 @@ public class Display {
 	public void clearTerminal() {
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
+	}
+
+	public void printTurn(String name) {
+		System.out.println("* " + name + "'s turn!");
+	}
+
+	public void clearScreen() {
+
+	}
+
+	public void sayGoodbye() {
+		System.out.println(" * Goodbye! *");
 	}
 
 }
