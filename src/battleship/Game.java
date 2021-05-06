@@ -45,7 +45,7 @@ public class Game {
 			display.printTurn("Peter");
 			// shoot enemy
 			// TODO review shooting correction and displaying issue !!
-			factory2.getAndPlaceShotOnBoard();
+			factory2.getAndPlaceShotOnBoard(board2.getOcean());
 			display.clearScreen();
 			// print enemy board after shooting
 			display.printBoardDuringShooting(board2.getOcean());
@@ -60,7 +60,7 @@ public class Game {
 			display.printTurn("Katie");
 			// shoot enemy
 			// TODO review placement correction and displaying issue !!
-			factory1.getAndPlaceShotOnBoard();
+			factory1.getAndPlaceShotOnBoard(board1.getOcean());
 			display.clearScreen();
 			// print enemy board after shooting
 			display.printBoardDuringShooting(board1.getOcean());
