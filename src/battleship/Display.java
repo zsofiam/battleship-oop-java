@@ -164,8 +164,12 @@ public class Display {
 		}
 
 	}
-	public void printBoardOwner(String name) {
-		System.out.println("\n" + name + "'s board:");
+	public void printBoardOwner(String name, boolean isJustMe) {
+		if (isJustMe) {
+			System.out.println("\n Your board:");
+		} else {
+			System.out.println("\n" + name + "'s board:");
+		}
 	}
 
 	public void sayGoodbye() {

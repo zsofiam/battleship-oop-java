@@ -79,27 +79,32 @@ public class BoardFactory {
         return board.getRows();
     }
 
-    public void manualPlacement() {
+    public void manualPlacement(Player player, boolean isJustMe) {
         int boardSize = getBoardSize();
         Square[][] ocean = board.getOcean();
         if (boardSize > 5) {
             checkAndPlaceOnBoardManual(ShipType.CARRIER);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 15) {
             checkAndPlaceOnBoardManual(ShipType.CRUISER);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 25) {
             checkAndPlaceOnBoardManual(ShipType.BATTLESHIP);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 35) {
             checkAndPlaceOnBoardManual(ShipType.SUBMARINE);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 45) {
             checkAndPlaceOnBoardManual(ShipType.DESTROYER);
+            display.printBoardOwner(player.getName(), isJustMe);
             display.printBoardDuringPlacingShips(ocean);
         }
     }
