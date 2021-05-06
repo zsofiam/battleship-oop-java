@@ -25,6 +25,7 @@ public class Game {
 		board2 = new Board(row, col); // player2
 		// input can set the names
 		String player1Name = input.askName(display, 1);
+		display.clearScreen();
 		String player2Name = input.askName(display, 2);
 		player1 = new Player(player1Name);
 		player2 = new Player(player2Name);
@@ -40,6 +41,7 @@ public class Game {
 		display.printBoardDuringPlacingShips(board2.getOcean());
 		display.printTurn(player2.getName(), false);
 		factory2.manualPlacement(player2, false);
+		display.clearScreen();
 
 		while (!isEnd) {
 			// print enemy board before shooting
@@ -57,7 +59,6 @@ public class Game {
 			if (isEnd) {
 				break;
 			}
-			input.waitForEnter();
 			display.clearScreen();
 			// print enemy board before shooting
 			display.printBoardOwner(player1.getName(), false);
@@ -71,6 +72,7 @@ public class Game {
 			display.printHitMessage(shotMessage, player1.getName(), null);
 			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());
+			display.clearScreen();
 		}
 		return !player1.isAlive(board1.getOcean()) ? player2.getName() : player1.getName();
 	}
@@ -97,8 +99,7 @@ public class Game {
 		display.printComputerPlacingTurn(computer.getName());
 		input.waitForEnter();
 		factory2.randomPlacement();
-
-
+		display.clearScreen();
 
 		while (!isEnd) {
 			// print enemy board before shooting
@@ -121,11 +122,13 @@ public class Game {
 			// wait for computer to move
 			input.waitForEnter();
 			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean(), computer);
+			display.clearScreen();
 			display.printBoardOwner(player1.getName(), true);
 			display.printBoardDuringShooting(board1.getOcean());
 			display.printHitMessage(shotMessage, computer.getName(), computer);
 			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());
+			display.clearScreen();
 		}
 		return !player1.isAlive(board1.getOcean()) ? computer.getName() : player1.getName();
 	}

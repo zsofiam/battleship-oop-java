@@ -44,15 +44,18 @@ public class Battleship {
 
 			switch (nextState) {
 				case 1:
+					display.clearScreen();
 					gameMode = input.getGameMode();
 					play(gameMode);
 					break;
 				case 2:
+					display.clearScreen();
 					showHighScores();
 					break;
 
 				case 0:
 				default:
+					display.clearScreen();
 					display.sayGoodbye();
 					System.exit(0);
 					break;
@@ -62,6 +65,7 @@ public class Battleship {
 
 	public void showHighScores() {
 		display.notImplemented();
+		input.waitForEnter();
 	}
 
 

@@ -100,7 +100,7 @@ public class Display {
 		System.out.println("_____________________________________________________________");
 		System.out.println("|                 🏆  CONGRATULATIONS!  🏆                  |");
 		System.out.println("|                                                           |");
-		System.out.println("                       "+winner+" WON!                       ");
+		System.out.println("                        "+winner+" WON!                       ");
 		System.out.println("|                                                           |");
 		System.out.println("|                                                           |");
 		System.out.println("|            Press enter to return to the menu...           |");
@@ -166,17 +166,19 @@ public class Display {
 	}
 	public void printBoardOwner(String name, boolean isJustMe) {
 		if (isJustMe) {
-			System.out.println("\n Your board:");
+			System.out.println(" Your board:");
 		} else {
-			System.out.println("\n" + name + "'s board:");
+			System.out.println(name + "'s board:");
 		}
 	}
 
 	public void sayGoodbye() {
-		System.out.println(" * Goodbye! *");
+		System.out.println("");
+		System.out.println("         * * * Goodbye! * * *");
+		System.out.println("");
 	}
 	public void askNameMessage(int number) {
-		System.out.println("Player" + number + "'s name: ");
+		System.out.print("Player" + number + "'s name: ");
 	}
 	public void notImplemented() {
 		System.out.println("This is not implemented!");
