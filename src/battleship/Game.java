@@ -120,11 +120,9 @@ public class Game {
 			display.printTurn(computer.getName(), false);
 			// wait for computer to move
 			input.waitForEnter();
-			// TODO computer shoot player
 			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean(), computer);
 			display.printBoardOwner(player1.getName(), true);
 			display.printBoardDuringShooting(board1.getOcean());
-			// TODO write AI shotMessage
 			display.printHitMessage(shotMessage, computer.getName(), computer);
 			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());

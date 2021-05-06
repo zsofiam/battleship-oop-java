@@ -178,5 +178,8 @@ public class Display {
 	public void askNameMessage(int number) {
 		System.out.println("Player" + number + "'s name: ");
 	}
+	public void notImplemented() {
+		System.out.println("This is not implemented!");
+	}
 
 }

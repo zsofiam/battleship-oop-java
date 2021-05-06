@@ -37,6 +37,7 @@ public class Battleship {
 
 	public void showMenu() {
 		while (true) {
+			display.clearScreen();
 			display.printMenu();
 
 			int nextState = input.getMenuInput();
@@ -60,7 +61,7 @@ public class Battleship {
 	}
 
 	public void showHighScores() {
-
+		display.notImplemented();
 	}
 
 
