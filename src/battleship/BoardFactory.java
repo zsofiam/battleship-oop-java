@@ -121,17 +121,25 @@ public class BoardFactory {
         placeOnBoard(shipType.length, startPosition, direction);
     }
 
-    public String getAndPlaceShotOnBoard(Square[][] enemyBoard) {
+    public String getAndPlaceShotOnBoard(Square[][] enemyBoard, ComputerPlayer computer) {
         boolean validShot = false;
         int[] squarePosition = new int[2];
-        System.out.println("Provide shooting coordinates!");
+        if (computer == null) {
+            System.out.println("Provide shooting coordinates!");
+        }
         while (!validShot) {
-            // TODO generate
-            squarePosition = input.getValidCoordinates();
+            if (computer == null) {
+                squarePosition = input.getValidCoordinates();
+            } else {
+                int row = random.nextInt(getBoardRows());
+                int col = random.nextInt(getBoardColumns());
+                squarePosition = new int[]{row, col};
+            }
             validShot = board.isShotOk(squarePosition);
             if (!validShot) {
-                // TODO generate again
-                System.out.println("Not valid shot. Please try again!");
+                if (computer == null) {
+                    System.out.println("Not valid shot. Please try again!");
+                }
             }
         }
         return board.placeShot(squarePosition, enemyBoard);

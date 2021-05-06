@@ -46,11 +46,12 @@ public class Game {
 			display.printBoardDuringShooting(board2.getOcean());
 			display.printTurn(player1.getName());
 			// shoot enemy
-			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean());
+			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean(), null);
 			display.clearScreen();
 			display.printBoardOwner(player2.getName());
 			display.printBoardDuringShooting(board2.getOcean());
-			display.printHitMessage(shotMessage, player2.getName());
+			display.printHitMessage(shotMessage, player2.getName(), null);
+			// TODO wait here?
 			isEnd = !player2.isAlive(board2.getOcean());
 			if (isEnd) {
 				break;
@@ -62,11 +63,11 @@ public class Game {
 			display.printBoardDuringShooting(board1.getOcean());
 			display.printTurn(player2.getName());
 			// shoot enemy
-			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean());
+			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean(), null);
 			display.clearScreen();
 			display.printBoardOwner(player1.getName());
 			display.printBoardDuringShooting(board1.getOcean());
-			display.printHitMessage(shotMessage, player1.getName());
+			display.printHitMessage(shotMessage, player1.getName(), null);
 			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());
 		}
@@ -92,10 +93,10 @@ public class Game {
 		factory1.manualPlacement();
 
 		display.clearScreen();
-		display.printBoardOwner(computer.getName());
-		display.printBoardDuringPlacingShips(board2.getOcean());
-		display.printTurn(computer.getName());
-		// random placement
+		display.printComputerPlacingTurn(computer.getName());
+		input.waitForEnter();
+		factory2.randomPlacement();
+
 
 		while (!isEnd) {
 			// print enemy board before shooting
@@ -103,12 +104,12 @@ public class Game {
 			display.printBoardDuringShooting(board2.getOcean());
 			display.printTurn(player1.getName());
 			// shoot computer
-			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean());
+			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean(), null);
 			display.clearScreen();
 			display.printBoardOwner(computer.getName());
 			display.printBoardDuringShooting(board2.getOcean());
-			display.printHitMessage(shotMessage, computer.getName());
-			isEnd = !player2.isAlive(board2.getOcean());
+			display.printHitMessage(shotMessage, computer.getName(), null);
+			isEnd = !computer.isAlive(board2.getOcean());
 			if (isEnd) {
 				break;
 			}
@@ -117,14 +118,14 @@ public class Game {
 			// wait for computer to move
 			input.waitForEnter();
 			// TODO computer shoot player
-
+			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean(), computer);
 			display.printBoardOwner(player1.getName());
 			display.printBoardDuringShooting(board1.getOcean());
 			// TODO write AI shotMessage
+			display.printHitMessage(shotMessage, computer.getName(), computer);
 			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());
 		}
-
 		return !player1.isAlive(board1.getOcean()) ? computer.getName() : player1.getName();
 	}
 
