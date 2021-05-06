@@ -81,20 +81,26 @@ public class BoardFactory {
 
     public void manualPlacement() {
         int boardSize = getBoardSize();
+        Square[][] ocean = board.getOcean();
         if (boardSize > 5) {
             checkAndPlaceOnBoardManual(ShipType.CARRIER);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 15) {
             checkAndPlaceOnBoardManual(ShipType.CRUISER);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 25) {
             checkAndPlaceOnBoardManual(ShipType.BATTLESHIP);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 35) {
             checkAndPlaceOnBoardManual(ShipType.SUBMARINE);
+            display.printBoardDuringPlacingShips(ocean);
         }
         if (boardSize > 45) {
             checkAndPlaceOnBoardManual(ShipType.DESTROYER);
+            display.printBoardDuringPlacingShips(ocean);
         }
     }
 
