@@ -125,7 +125,7 @@ public class Display {
 	}
 
 	public void printTurn(String name) {
-		System.out.println("* " + name + "'s turn!");
+		System.out.println("🧭 " + name + "'s turn!");
 	}
 
 	public void clearScreen() {
@@ -137,6 +137,9 @@ public class Display {
 		} else {
 			System.out.println("🚩 You missed! :( ");
 		}
+	}
+	public void printBoardOwner(String name) {
+		System.out.println("\n" + name + "'s board:");
 	}
 
 	public void sayGoodbye() {
