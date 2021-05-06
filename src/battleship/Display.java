@@ -166,5 +166,8 @@ public class Display {
 	public void sayGoodbye() {
 		System.out.println(" * Goodbye! *");
 	}
+	public void askNameMessage(int number) {
+		System.out.println("Player" + number + "'s name: ");
+	}
 
 }

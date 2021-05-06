@@ -24,9 +24,10 @@ public class Game {
 		board1 = new Board(row, col); // player1
 		board2 = new Board(row, col); // player2
 		// input can set the names
-
-		player1 = new Player("Peter");
-		player2 = new Player("Katie");
+		String player1Name = input.askName(display, 1);
+		String player2Name = input.askName(display, 2);
+		player1 = new Player(player1Name);
+		player2 = new Player(player2Name);
 		BoardFactory factory1 = new BoardFactory(board1);
 		BoardFactory factory2 = new BoardFactory(board2);
 		display.clearScreen();
@@ -81,9 +82,9 @@ public class Game {
 		// check game end condition
 		board1 = new Board(row, col); // player
 		board2 = new Board(row, col); // AI
-		// input can set the name
-		player1 = new Player("Peter");
-		computer = new ComputerPlayer("Computer");
+		String player1Name = input.askName(display, 1);
+		player1 = new Player(player1Name);
+		computer = new ComputerPlayer("Computer Carl");
 		BoardFactory factory1 = new BoardFactory(board1);
 		BoardFactory factory2 = new BoardFactory(board2);
 		display.clearScreen();
