@@ -16,9 +16,8 @@ public class BoardFactory {
         display = new Display(board.getRows(), board.getColumns());
     }
 
-    public void randomPlacement() throws InterruptedException {
+    public void randomPlacement() {
         int boardSize = getBoardSize();
-        Square[][] ocean = board.getOcean();
         if (boardSize > 5) {
             checkAndPlaceOnBoardRandom(ShipType.CARRIER);
         }

@@ -15,7 +15,7 @@ public class Game {
 		this.col = col;
 	}
 
-	public String playerVsPlayer(Input input, Display display) throws InterruptedException {
+	public String playerVsPlayer(Input input, Display display) {
 		String shotMessage = "";
 		display.clearScreen();
 		// play rounds, make moves
