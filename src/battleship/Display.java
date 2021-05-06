@@ -134,11 +134,16 @@ public class Display {
 		}
 	}
 
-	public void printTurn(String name) {
-		System.out.println("🧭 " + name + "'s turn!");
+	public void printTurn(String name, boolean isJustMe) {
+		if (isJustMe) {
+			System.out.println("🧭 It's your turn " + name + "!");
+		} else {
+			System.out.println("🧭 " + name + "'s turn!");
+		}
+
 	}
 	public void printComputerPlacingTurn(String name) {
-		System.out.println("🧭 " + name + "'s turn to place the ships!");
+		System.out.println("🧭 " + name + "'s turn to place ships!");
 	}
 
 	public void printHitMessage(String message, String name, ComputerPlayer computer) {

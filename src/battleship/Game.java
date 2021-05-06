@@ -33,19 +33,19 @@ public class Game {
 		display.clearScreen();
 		display.printBoardOwner(player1.getName());
 		display.printBoardDuringPlacingShips(board1.getOcean());
-		display.printTurn(player1.getName());
+		display.printTurn(player1.getName(), false);
 		factory1.manualPlacement();
 		display.clearScreen();
 		display.printBoardOwner(player2.getName());
 		display.printBoardDuringPlacingShips(board2.getOcean());
-		display.printTurn(player2.getName());
+		display.printTurn(player2.getName(), false);
 		factory2.manualPlacement();
 
 		while (!isEnd) {
 			// print enemy board before shooting
 			display.printBoardOwner(player2.getName());
 			display.printBoardDuringShooting(board2.getOcean());
-			display.printTurn(player1.getName());
+			display.printTurn(player1.getName(), false);
 			// shoot enemy
 			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean(), null);
 			display.clearScreen();
@@ -62,7 +62,7 @@ public class Game {
 			// print enemy board before shooting
 			display.printBoardOwner(player1.getName());
 			display.printBoardDuringShooting(board1.getOcean());
-			display.printTurn(player2.getName());
+			display.printTurn(player2.getName(), false);
 			// shoot enemy
 			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean(), null);
 			display.clearScreen();
@@ -90,7 +90,7 @@ public class Game {
 		display.clearScreen();
 		display.printBoardOwner(player1.getName());
 		display.printBoardDuringPlacingShips(board1.getOcean());
-		display.printTurn(player1.getName());
+		display.printTurn(player1.getName(), true);
 		factory1.manualPlacement();
 
 		display.clearScreen();
@@ -103,7 +103,7 @@ public class Game {
 			// print enemy board before shooting
 			display.printBoardOwner(computer.getName());
 			display.printBoardDuringShooting(board2.getOcean());
-			display.printTurn(player1.getName());
+			display.printTurn(player1.getName(), true);
 			// shoot computer
 			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean(), null);
 			display.clearScreen();
@@ -115,7 +115,7 @@ public class Game {
 				break;
 			}
 			display.clearScreen();
-			display.printTurn(computer.getName());
+			display.printTurn(computer.getName(), false);
 			// wait for computer to move
 			input.waitForEnter();
 			// TODO computer shoot player
