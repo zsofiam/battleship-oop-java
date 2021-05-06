@@ -99,9 +99,9 @@ public class Display {
 		System.out.println("\\____/");
 
 		System.out.println("_____________________________________________________________");
-		System.out.println("|                     CONGRATULATIONS!                      |");
+		System.out.println("|                 🏆  CONGRATULATIONS!  🏆                  |");
 		System.out.println("|                                                           |");
-		System.out.println("|                      "+winner+" WON!                       |");
+		System.out.println("                       "+winner+" WON!                       ");
 		System.out.println("|                                                           |");
 		System.out.println("|                                                           |");
 		System.out.println("|            Press enter to return to the menu...           |");
