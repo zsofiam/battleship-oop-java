@@ -36,28 +36,27 @@ public class Battleship {
 	}
 
 	public void showMenu() {
-		display.printMenu();
+		while (true) {
+			display.printMenu();
 
-		int nextState = input.getMenuInput();
+			int nextState = input.getMenuInput();
 
-		switch (nextState) {
-			case 1:
-				gameMode = input.getGameMode();
-				play(gameMode);
-				break;
-			case 2:
-				showHighScores();
-				break;
+			switch (nextState) {
+				case 1:
+					gameMode = input.getGameMode();
+					play(gameMode);
+					break;
+				case 2:
+					showHighScores();
+					break;
 
-			case 0:
-			default:
-				display.sayGoodbye();
-				System.exit(0);
-				break;
+				case 0:
+				default:
+					display.sayGoodbye();
+					System.exit(0);
+					break;
+			}
 		}
-		// start new game - choose player vs player | player vs AI
-		// display high scores
-		// exit
 	}
 
 	public void showHighScores() {
