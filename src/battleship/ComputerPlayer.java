@@ -1,6 +1,18 @@
 package battleship;
 
-public class ComputerPlayer {
+public class ComputerPlayer extends Player {
+	private String name;
+
+	public ComputerPlayer(String name) {
+		super(name);
+		this.name = name;
+	}
+
+	@Override
+	public String getName() {
+		return name;
+	}
+
 	public void ComputerPlayerEasy() {
 		// random, excluding struck fields
 	}

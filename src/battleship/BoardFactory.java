@@ -126,9 +126,11 @@ public class BoardFactory {
         int[] squarePosition = new int[2];
         System.out.println("Provide shooting coordinates!");
         while (!validShot) {
+            // TODO generate
             squarePosition = input.getValidCoordinates();
             validShot = board.isShotOk(squarePosition);
             if (!validShot) {
+                // TODO generate again
                 System.out.println("Not valid shot. Please try again!");
             }
         }

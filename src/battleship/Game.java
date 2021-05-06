@@ -5,6 +5,7 @@ public class Game {
 	Board board2;
 	Player player1;
 	Player player2;
+	ComputerPlayer computer;
 	int row;
 	int col;
 	boolean isEnd = false;
@@ -84,7 +85,7 @@ public class Game {
 		board2 = new Board(row, col); // AI
 		// input can set the name
 		player1 = new Player(player1Name);
-		player2 = new Player(computerName);
+		computer = new ComputerPlayer(computerName);
 		BoardFactory factory1 = new BoardFactory(board1);
 		BoardFactory factory2 = new BoardFactory(board2);
 		display.clearScreen();
@@ -119,6 +120,7 @@ public class Game {
 			// wait for computer to move
 			input.waitForEnter();
 			// TODO computer shoot player
+
 			display.printBoardOwner(player1Name);
 			display.printBoardDuringShooting(board1.getOcean());
 			// TODO write AI shotMessage
