@@ -99,9 +99,9 @@ public class Display {
 		System.out.println("\\____/");
 
 		System.out.println("_____________________________________________________________");
-		System.out.println("|                     CONGRATULATIONS!                      |");
+		System.out.println("|                 🏆  CONGRATULATIONS!  🏆                  |");
 		System.out.println("|                                                           |");
-		System.out.println("|                      "+winner+" WON!                       |");
+		System.out.println("                       "+winner+" WON!                       ");
 		System.out.println("|                                                           |");
 		System.out.println("|                                                           |");
 		System.out.println("|            Press enter to return to the menu...           |");
@@ -136,9 +136,19 @@ public class Display {
 	}
 
 	public void printTurn(String name) {
-		System.out.println("* " + name + "'s turn!");
+		System.out.println("🧭 " + name + "'s turn!");
 	}
 
+	public void printHitMessage(String message, String name) {
+		if (message.equals("hit")) {
+			System.out.println("💥 You hit " + name + "'s ship!");
+		} else {
+			System.out.println("🚩 You missed! :( ");
+		}
+	}
+	public void printBoardOwner(String name) {
+		System.out.println("\n" + name + "'s board:");
+	}
 
 	public void sayGoodbye() {
 		System.out.println(" * Goodbye! *");

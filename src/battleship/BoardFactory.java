@@ -113,7 +113,7 @@ public class BoardFactory {
         placeOnBoard(shipType.length, startPosition, direction);
     }
 
-    public void getAndPlaceShotOnBoard(Square[][] enemyBoard) {
+    public String getAndPlaceShotOnBoard(Square[][] enemyBoard) {
         boolean validShot = false;
         int[] squarePosition = new int[2];
         System.out.println("Provide shooting coordinates!");
@@ -124,7 +124,7 @@ public class BoardFactory {
                 System.out.println("Not valid shot. Please try again!");
             }
         }
-        board.placeShot(squarePosition, enemyBoard);
+        return board.placeShot(squarePosition, enemyBoard);
     }
 
 }
