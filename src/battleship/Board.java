@@ -94,14 +94,16 @@ public class Board {
 	public Square[][] getOcean() {
 		return ocean;
 	}
-	public void placeShot(int[]squarePosition, Square[][] enemyBoard){
+	public String placeShot(int[]squarePosition, Square[][] enemyBoard){
 		//TO DO - mark shot on board
 		int row = squarePosition[0];
 		int col = squarePosition[1];
 		if (enemyBoard[row][col].getStatus() == SquareStatus.SHIP) {
 			enemyBoard[row][col].setStatus(SquareStatus.HIT);
+			return "hit";
 		} else {
 			enemyBoard[row][col].setStatus(SquareStatus.MISSED);
+			return "missed";
 		}
 	}
 }

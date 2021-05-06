@@ -16,6 +16,7 @@ public class Game {
 	}
 
 	public String playerVsPlayer(Input input, Display display) {
+		String shotMessage = "";
 		display.clearScreen();
 		// play rounds, make moves
 		// check game end condition
@@ -27,12 +28,14 @@ public class Game {
 		BoardFactory factory1 = new BoardFactory(board1);
 		BoardFactory factory2 = new BoardFactory(board2);
 		display.clearScreen();
+		display.printBoardOwner("Peter");
 		display.printBoardDuringPlacingShips(board1.getOcean());
 		display.printTurn("Peter");
 		// TODO need to print board after every ship placement !!
 		// TODO review placement correction and displaying issue !!
 		factory1.manualPlacement();
 		display.clearScreen();
+		display.printBoardOwner("Katie");
 		display.printBoardDuringPlacingShips(board2.getOcean());
 		display.printTurn("Katie");
 		// TODO need to print board after every ship placement !!
@@ -41,13 +44,15 @@ public class Game {
 
 		while (!isEnd) {
 			// print enemy board before shooting
+			display.printBoardOwner("Katie");
 			display.printBoardDuringShooting(board2.getOcean());
 			display.printTurn("Peter");
 			// shoot enemy
-			factory2.getAndPlaceShotOnBoard(board2.getOcean());
+			shotMessage = factory2.getAndPlaceShotOnBoard(board2.getOcean());
 			display.clearScreen();
-			// TODO print some message: hit, missed os etc
+			display.printBoardOwner("Katie");
 			display.printBoardDuringShooting(board2.getOcean());
+			display.printHitMessage(shotMessage, "Katie");
 			isEnd = !player2.isAlive(board2.getOcean());
 			if (isEnd) {
 				break;
@@ -55,13 +60,15 @@ public class Game {
 			input.waitForEnter();
 			display.clearScreen();
 			// print enemy board before shooting
+			display.printBoardOwner("Peter");
 			display.printBoardDuringShooting(board1.getOcean());
 			display.printTurn("Katie");
 			// shoot enemy
-			factory1.getAndPlaceShotOnBoard(board1.getOcean());
+			shotMessage = factory1.getAndPlaceShotOnBoard(board1.getOcean());
 			display.clearScreen();
-			// TODO print some message: hit, missed os etc
+			display.printBoardOwner("Peter");
 			display.printBoardDuringShooting(board1.getOcean());
+			display.printHitMessage(shotMessage, "Peter");
 			input.waitForEnter();
 			isEnd = !player1.isAlive(board1.getOcean());
 		}
