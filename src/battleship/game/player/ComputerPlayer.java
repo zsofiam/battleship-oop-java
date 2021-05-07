@@ -1,4 +1,4 @@
-package battleship;
+package battleship.game.player;
 
 public class ComputerPlayer extends Player {
 	private String name;

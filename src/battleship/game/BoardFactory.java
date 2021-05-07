@@ -1,4 +1,9 @@
-package battleship;
+package battleship.game;
+
+import battleship.game.player.ComputerPlayer;
+import battleship.game.player.Player;
+import battleship.view.Display;
+import battleship.view.Input;
 
 import java.util.Random;
 

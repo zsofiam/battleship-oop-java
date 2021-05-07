@@ -1,4 +1,6 @@
-package battleship;
+package battleship.view;
+
+import battleship.view.Display;
 
 import java.util.Scanner;
 

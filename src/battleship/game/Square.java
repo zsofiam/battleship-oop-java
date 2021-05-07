@@ -1,4 +1,4 @@
-package battleship;
+package battleship.game;
 
 public class Square {
 	private int X;

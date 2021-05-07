@@ -1,4 +1,4 @@
-package battleship;
+package battleship.game;
 
 public enum SquareStatus {
 	// (empty, ship, hit, missed) unicode character

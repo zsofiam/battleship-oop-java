@@ -1,5 +1,9 @@
 package battleship;
 
+import battleship.game.Game;
+import battleship.view.Display;
+import battleship.view.Input;
+
 public class Battleship {
 	private Display display;
 	private Input input;

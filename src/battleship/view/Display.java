@@ -1,5 +1,9 @@
-package battleship;
+package battleship.view;
 
+
+import battleship.game.player.ComputerPlayer;
+import battleship.game.Square;
+import battleship.game.SquareStatus;
 
 public class Display {
 	int col;

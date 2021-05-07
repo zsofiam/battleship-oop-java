@@ -1,4 +1,8 @@
-package battleship;
+package battleship.game.player;
+
+import battleship.game.Ship;
+import battleship.game.Square;
+import battleship.game.SquareStatus;
 
 import java.util.List;
 
@@ -33,5 +37,14 @@ public class Player {
 			}
 		}
 		return false;
+	}
+
+	public boolean isAlive() {
+		boolean alive = false;
+		for (var ship: ships) {
+			if(ship.isWhole())
+				alive = true;
+		}
+		return alive;
 	}
 }

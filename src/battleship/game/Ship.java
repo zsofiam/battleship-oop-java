@@ -1,4 +1,4 @@
-package battleship;
+package battleship.game;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -36,5 +36,12 @@ public class Ship {
 
 		//This square has no ship
 		return new Square(x, y, SquareStatus.EMPTY);
+	}
+
+	public boolean isWhole() {
+		for(var sqr : squares){
+
+		}
+		return true;
 	}
 }
