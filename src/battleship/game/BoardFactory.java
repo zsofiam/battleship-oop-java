@@ -1,7 +1,7 @@
 package battleship.game;
 
 import battleship.game.player.ComputerPlayer;
-import battleship.game.player.Player;
+import battleship.game.player.HumanPlayer;
 import battleship.view.Display;
 import battleship.view.Input;
 
@@ -84,7 +84,7 @@ public class BoardFactory {
         return board.getRows();
     }
 
-    public void manualPlacement(Player player, boolean isJustMe) {
+    public void manualPlacement(HumanPlayer player, boolean isJustMe) {
         int boardSize = getBoardSize();
         Square[][] ocean = board.getOcean();
         if (boardSize > 5) {

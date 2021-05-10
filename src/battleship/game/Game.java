@@ -1,15 +1,15 @@
 package battleship.game;
 
 import battleship.game.player.ComputerPlayer;
-import battleship.game.player.Player;
+import battleship.game.player.HumanPlayer;
 import battleship.view.Display;
 import battleship.view.Input;
 
 public class Game {
 	Board board1;
 	Board board2;
-	Player player1;
-	Player player2;
+	HumanPlayer player1;
+	HumanPlayer player2;
 	ComputerPlayer computer;
 	int row;
 	int col;
@@ -32,8 +32,8 @@ public class Game {
 		String player1Name = input.askName(display, 1);
 		display.clearScreen();
 		String player2Name = input.askName(display, 2);
-		player1 = new Player(player1Name);
-		player2 = new Player(player2Name);
+		player1 = new HumanPlayer(player1Name);
+		player2 = new HumanPlayer(player2Name);
 		BoardFactory factory1 = new BoardFactory(board1);
 		BoardFactory factory2 = new BoardFactory(board2);
 		display.clearScreen();
@@ -90,7 +90,7 @@ public class Game {
 		board1 = new Board(row, col); // player
 		board2 = new Board(row, col); // AI
 		String player1Name = input.askName(display, 1);
-		player1 = new Player(player1Name);
+		player1 = new HumanPlayer(player1Name);
 		computer = new ComputerPlayer("Computer Carl");
 		BoardFactory factory1 = new BoardFactory(board1);
 		BoardFactory factory2 = new BoardFactory(board2);
